@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+body {
+    background-color: #f5f5f5; 
+    margin: 0; 
+}
+html {
+    font-size: 90.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+header {
+    position: fixed;
+    top: 0; /* Align navbar to the top */
+    left: 0; /* Align navbar to the left */
+    right: 0; /* Align navbar to the right */
+    background:green; /* Darker red background for navbar */
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Full width */
+    border-radius: 0; /* Remove border-radius to align with background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000;
+}
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: bisque;
+    text-decoration: none;
+}
+header .logo span {
+    color: #f5c5c5; /* Softer pink color for span */
+}
+header .navbar {
+    display: flex;
+    align-items: center;
+}
+header .navbar a {
+    font-size: 1.4rem;
+    padding: 0 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+header .navbar a:hover {
+    color:peru; /* Lighter hover color */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+header .icons a {
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: #fff;
+    transition: color 0.3s, transform 0.3s;
+}
+header .icons a:hover {
+    color: #ffd1d1; /* Lighter hover color */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+header #toggler {
+    display: none;
+}
+header .fa-bars {
+    font-size: 3rem;
+    color: #ffd1d1;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+@media (max-width: 991px) {
+    header {
+        padding: 1.5rem;
+    }
+}
+@media (max-width: 771px) {
+    header .fa-bars {
+        display: block; /* Show menu icon */
+    }
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: peru; /* Consistent background */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none; /* Hidden by default */
+        border-radius: 0 0 25px 25px; /* Match header rounding */
+        padding: 2rem 0;
+    }
+    header #toggler:checked ~ .navbar {
+        display: flex; /* Show when toggler is checked */
+    }
+    header .navbar a {
+        margin: 1rem 0;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        border: none; /* Remove border for cleaner look */
+    }
+}
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url('flowersbg.png') no-repeat center center;
+    background-size: cover;
+    padding: 0; /* Remove any extra padding */
+    margin-top: 0; /* Ensure no margin is added on top */
+    position: relative; /* Ensure the section is positioned correctly */
+}
+.home .content {
+    max-width: 50rem;
+    margin: auto;
+    color: white;
+    text-align: center;
+}
+.home .content h3 {
+    font-size: 4rem;
+    color: peru;
+}
+.home .content span {
+    font-size: 3rem;
+    color: green;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+.home .content p {
+    font-size: 1.5rem;
+    color:red;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+.home .content .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: white;
+    background: green;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: background 0.3s, transform 0.3s;
+}
+.home .content .btn:hover {
+    background:rgb(19, 188, 19);
+    transform: translateY(-2px);
+}
+/* about section */
+#about-us {
+  padding: 50px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+#about-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#about-us h2 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#about-us p {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.about-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-item {
+  max-width: 350px;
+  text-align: center;
+}
+
+.about-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.about-item h3 {
+  font-size: 1.8rem;
+  color: #444;
+  margin-top: 15px;
+}
+
+.about-item p {
+  font-size: 1rem;
+  color: #777;
+}
+/* product */
+/* General section styling */
+#product {
+  padding: 60px 0;
+  /* background-color: #f4f4f4; */
+  background-color: rgb(255, 192, 203);
+}
+
+#product h1.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#product .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 products per row */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Remove special treatment for the last 2 boxes */
+#product .container .box {
+  grid-column: span 1;
+}
+
+#product .box {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+#product .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+#product .box .discount {
+  background-color: #ff4d4d;
+  color: #fff;
+  padding: 5px 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+#product .box .image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#product .box .image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+#product .box:hover .image img {
+  transform: scale(1.1);
+}
+
+#product .box .icons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#product .box:hover .icons {
+  opacity: 1;
+}
+
+#product .box .icons a {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+#product .box .icons a:hover {
+  background-color: #ff4d4d;
+}
+
+#product .box .content {
+  padding: 20px;
+  text-align: center;
+}
+
+#product .box .content h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#product .box .content .price {
+  font-size: 1.3rem;
+  color: #ff4d4d;
+  font-family: 'Poppins', sans-serif;
+}
+/* review */
+/* Review Section */
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .review-box {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 23%;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex: 1;
+    }
+
+    .review-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .customer-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .customer-img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+
+    .rating {
+        color: gold;
+        margin-bottom: 10px;
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        color: #333;
+    }
+
+    .review-box p {
+        font-size: 0.95rem;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .review-box h3 {
+        font-size: 1.2rem;
+        margin: 0;
+        color: #333;
+    }
+
+    .review-box span {
+        font-size: 0.85rem;
+        color: #999;
+    }
+
+    /* Responsive design */
+    @media (max-width: 992px) {
+        .review-box {
+            max-width: 48%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .review-box {
+            max-width: 100%;
+        }
+    }
+    .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact form section */
+.contact-form {
+  flex: 1;
+  padding: 20px;
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #555;
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form form input:focus,
+.contact-form form textarea:focus {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 150, 136, 0.2);
+}
+
+.contact-form form button {
+  width: 100%;
+  padding: 15px;
+  background-color:rgb(255, 192, 203);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form form button:hover {
+  background-color: #00796b;
+  box-shadow: 0 10px 20px rgba(0, 150, 136, 0.4);
+}
+
+/* Contact image section */
+.heading {
+        text-align: center;
+        font-size: 3rem;
+        color: #333;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    /* Contact Section Container */
+    .contact-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+        background: rgb(255, 192, 203);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    /* Contact Info Styling */
+    .contact-info {
+        flex: 1;
+        color:white;
+        text-align: left;
+        padding: 20px;
+        max-width: 400px;
+    }
+
+    .contact-info h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .contact-info p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: white;
+    }
+
+    .info-box {
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .info-box i {
+        margin-right: 15px;
+        font-size: 1.5rem;
+        color: green;
+    }
+
+    .social-media a {
+        margin-right: 10px;
+        color: green;
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+    }
+
+    .social-media a:hover {
+        transform: scale(1.2);
+        color: #ffd700;
+    }
+
+    /* Contact Form Styling */
+    .contact-form {
+        flex: 1;
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form form input,
+    .contact-form form textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        background-color: #f7f7f7;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .contact-form form input:focus,
+    .contact-form form textarea:focus {
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form form button {
+        width: 100%;
+        padding: 15px;
+        background-color:rgb(255, 192, 203);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact-form form button:hover {
+        background-color: palevioletred;
+    }
+
+    /* Contact Image Section */
+    .contact-image {
+        flex: 1;
+        text-align: center;
+        max-width: 700px;
+    }
+
+    .contact-image img {
+        max-width: 800px;
+        /* border-radius: 20px; */
+        /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .contact-image img:hover {
+        transform: scale(1.05);
+        /* box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+        .contact-container {
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        .contact-image {
+            margin-top: 30px;
+        }
+    }
+    /* Responsive Styles */
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content p {
+        margin-bottom: 10px;
+    }
+
+    .footer-socials {
+        margin-top: 10px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar a {
+        padding: 15px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-socials {
+        margin-left: 20px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .navbar a {
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-socials {
+        margin-left: 20px;
+    }
+}
+
+/* Footer Styles */
+/* Footer */
+footer {
+    background-color:green;
+    color: #fff;
+    padding: 10px 0;
+    /* border-top: 1px solid #444; */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 3rem;
+}
+
+.footer-logo a {
+    color: #fff;
+    font-size: 3rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: #e6b6b6; /* Light pink for a unique touch */
+}
+
+.footer-content {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #e6b6b6; /* Light pink on hover for consistency */
+}
+
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-GlT98ef4+lrzSRpI0o+O4V1zblB4ReD7qE6jPvPSFv4+8/zI/t3B4nMJ6qzy+LSwTIkv5KlT0J6qN5Fu/N2hVxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#" class="logo">Flowers<span>Website</span></a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about-us">About us</a>
+        <a href="#products">Products</a>
+        <a href="#review">Review</a>
+        <a href="#contact-us">Contact us</a>
+    </nav>
+    <div class="icons">
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+    </div>
+</header>
+<section class="home" id="home">
+    <div class="content">
+        <h3>Fresh Flowers</h3>
+        <span>Natural & Beautiful Flowers</span>
+        <p>
+            Flowers are nature's way of showcasing beauty and diversity. With their vibrant colors, delicate petals, and enchanting fragrances, flowers have the unique ability to captivate our senses and bring joy to our hearts. They symbolize love, friendship, and new beginnings, making them the perfect gift for any occasion. From the bold and striking roses to the gentle and soothing lilies, every flower has its own story and charm. Explore our collection and let the beauty of flowers brighten your day, transform your spaces, and create lasting memories.
+        </p>
+        <a href="#" class="btn">Shop now</a>
+    </div>
+</section>
+<section id="about-us">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are passionate about bringing you the freshest and most beautiful flowers. Our mission is to make your moments bloom with joy. With a wide variety of floral arrangements, we deliver nature’s beauty right to your doorstep.</p>
+      <div class="about-grid">
+        <div class="about-item">
+          <img src="freshflowers.jfif" alt="Fresh Flowers">
+          <h3>Fresh Flowers</h3>
+          <p>Hand-picked and freshly delivered flowers for every occasion.</p>
+        </div>
+        <div class="about-item">
+          <img src="ourteam.jfif" alt="Our Team">
+          <h3>Our Team</h3>
+          <p>A dedicated team of florists and designers to make your floral dreams come true.</p>
+        </div>
+        <div class="about-item">
+          <img src="fastdelievery.jfif" alt="Fast Delivery">
+          <h3>Fast Delivery</h3>
+          <p>Reliable and fast delivery to ensure your flowers arrive fresh and beautiful.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="product" id="product">
+    <h1 class="heading">Latest Products</h1>
+    <div class="container">
+  
+      <!-- Row 1 (4 products) -->
+      <div class="box">
+        <span class="discount">-10%</span>
+        <div class="image">
+          <img src="pot1-removebg-preview.png" alt="Flower Pot 1">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="cart-btn"></a>
+            <a href="#" class="fas fa-share"></a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Flower Pot</h3>
+          <div class="price">$12.7</div>
+        </div>
+      </div>
+  
+      <div class="box">
+        <span class="discount">-15%</span>
+        <div class="image">
+          <img src="pot2-removebg-preview.png" alt="Flower Pot 2">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="cart-btn"></a>
+            <a href="#" class="fas fa-share"></a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Flower Pot</h3>
+          <div class="price">$20.6</div>
+        </div>
+      </div>
+  
+      <div class="box">
+        <span class="discount">-20%</span>
+        <div class="image">
+          <img src="pot3-removebg-preview.png" alt="Flower Pot 3">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="cart-btn"></a>
+            <a href="#" class="fas fa-share"></a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Flower Pot</h3>
+          <div class="price">$40</div>
+        </div>
+      </div>
+  
+      <div class="box">
+        <span class="discount">-5%</span>
+        <div class="image">
+          <img src="pot4-removebg-preview.png" alt="Flower Pot 4">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="cart-btn"></a>
+            <a href="#" class="fas fa-share"></a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Flower Pot</h3>
+          <div class="price">$25.9</div>
+        </div>
+      </div>
+  
+      <!-- Row 2 (4 products) -->
+      <div class="box">
+        <span class="discount">-50%</span>
+        <div class="image">
+          <img src="pot5-removebg-preview.png" alt="Flower Pot 5">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="cart-btn"></a>
+            <a href="#" class="fas fa-share"></a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Flower Pot</h3>
+          <div class="price">$50.4</div>
+        </div>
+      </div>
+  
+      <div class="box">
+        <span class="discount">-30%</span>
+        <div class="image">
+          <img src="pot6-removebg-preview.png" alt="Flower Pot 6">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="cart-btn"></a>
+            <a href="#" class="fas fa-share"></a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Flower Pot</h3>
+          <div class="price">$30.7</div>
+        </div>
+      </div>
+  
+      <div class="box">
+        <span class="discount">-40%</span>
+        <div class="image">
+          <img src="pot7-removebg-preview.png" alt="Flower Pot 7">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="cart-btn"></a>
+            <a href="#" class="fas fa-share"></a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Flower Pot</h3>
+          <div class="price">$26.7</div>
+        </div>
+      </div>
+  
+      <div class="box">
+        <span class="discount">-20%</span>
+        <div class="image">
+          <img src="pot8-removebg-preview.png" alt="Flower Pot 8">
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="cart-btn"></a>
+            <a href="#" class="fas fa-share"></a>
+          </div>
+        </div>
+        <div class="content">
+          <h3>Flower Pot</h3>
+          <div class="price">$60.5</div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  <!-- review -->
+  <section class="reviews" id="reviews">
+    <h1 class="heading">What Our Customers Say</h1>
+    <div class="container">
+        <div class="review-box">
+            <div class="customer-info">
+                <img src="customer1.jfif" alt="Emily Johnson" class="customer-img">
+                <div>
+                    <h3>Emily Johnson</h3>
+                    <span>Verified Buyer</span>
+                </div>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>"The flower arrangements were absolutely beautiful and lasted for days. I highly recommend this service!"</p>
+        </div>
+
+        <div class="review-box">
+            <div class="customer-info">
+                <img src="customer3.jfif" alt="Michael Smith" class="customer-img">
+                <div>
+                    <h3>Michael Smith</h3>
+                    <span>Verified Buyer</span>
+                </div>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>"Great selection of flowers and fast delivery. The bouquet was fresh and vibrant. Will order again!"</p>
+        </div>
+
+        <div class="review-box">
+            <div class="customer-info">
+                <img src="customer2.jfif" alt="Sarah Davis" class="customer-img">
+                <div>
+                    <h3>Sarah Davis</h3>
+                    <span>Verified Buyer</span>
+                </div>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <p>"Amazing service and beautiful flowers. The delivery was on time, and the customer service was excellent."</p>
+        </div>
+
+        <div class="review-box">
+            <div class="customer-info">
+                <img src="customer4.jfif" alt="David Brown" class="customer-img">
+                <div>
+                    <h3>David Brown</h3>
+                    <span>Verified Buyer</span>
+                </div>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>"The flowers exceeded my expectations. They were fresh, beautifully arranged, and exactly what I wanted."</p>
+        </div>
+    </div>
+</section>
+
+<!-- contact -->
+<section class="contact" id="contact">
+  <h1 class="heading">Get in Touch</h1>
+  <div class="contact-container">
+      <div class="contact-info">
+          <h2>Contact Us</h2>
+          <p>We'd love to hear from you! Feel free to reach out to us with any questions or inquiries.</p>
+          <div class="info-box">
+              <i class="fas fa-phone-alt"></i>
+              <span>+123 456 7890</span>
+          </div>
+          <div class="info-box">
+              <i class="fas fa-envelope"></i>
+              <span>info@yourwebsite.com</span>
+          </div>
+          <div class="info-box">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Flower Lane, Cityville, USA</span>
+          </div>
+          <div class="social-media">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+      </div>
+
+      <div class="contact-form">
+          <form action="">
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+              <textarea placeholder="Your Message" required></textarea>
+              <button type="submit">Send Message</button>
+          </form>
+      </div>
+
+      <div class="contact-image">
+          <img src="pot2-removebg-preview.png" alt="Contact Us">
+      </div>
+  </div>
+</section>
+<footer>
+<a href="#" class="footer-logo">Flowers<span>Website</span></a>
+<div class="footer-content">
+    <p>&copy; 2024 Flowers Website. All rights reserved.</p>
+    <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</div>
+</footer>
+    
+  <script>
+    
+    // // Wait until the DOM is fully loaded
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     // Select all navbar links
+    //     const navLinks = document.querySelectorAll('header .navbar a');
+
+    //     // Add a click event listener to each link
+    //     navLinks.forEach(link => {
+    //         link.addEventListener('click', function (e) {
+    //             // Prevent default anchor behavior
+    //             e.preventDefault();
+
+    //             // Get the target section's id from the link's href
+    //             const sectionId = this.getAttribute('href');
+
+    //             // Scroll to the section smoothly
+    //             document.querySelector(sectionId).scrollIntoView({
+    //                 behavior: 'smooth'
+    //             });
+    //         });
+    //     });
+    // });
+</script>
+<script>
+// Smooth scrolling to the section
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor click behavior
+        
+        const targetSection = document.querySelector(this.getAttribute('href'));
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 50,  // Adjust this for any fixed headers
+                behavior: 'smooth'  // Smooth scrolling behavior
+            });
+        }
+    });
+});
+
+</script>
+
+
+
+
+
+ 
+</body>
+</html>
+
+
+                        
